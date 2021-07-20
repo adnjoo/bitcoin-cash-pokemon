@@ -1,0 +1,21 @@
+{
+  "name": "DM-W7-D2-traceability-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adnjoo/DM-W7-D2-traceability-lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adnjoo/DM-W7-D2-traceability-lab/issues"
+  },
+  "homepage": "https://github.com/adnjoo/DM-W7-D2-traceability-lab#readme"
+}
