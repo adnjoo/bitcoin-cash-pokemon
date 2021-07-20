@@ -44,11 +44,13 @@ app.post("/api/hero", (req, res) => {
 
     res.status(200).send(heroesList)
   } else if (hero === '') {
-    rollbar.error('no name given')
+    // rollbar.error('no name given')
+    rollbar.critical('no name was given')
 
     res.status(400).send({error: 'no name was provided'})
   } else {
-    rollbar.error('hero already exists')
+    // rollbar.error('hero already exists')
+    rollbar.warning('hero already exists')
 
     res.status(400).send({error: 'that hero already exists'})
   }
