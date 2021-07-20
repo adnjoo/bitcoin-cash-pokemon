@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(rollbar.errorHandler());
 
-let heroesList = [];
+let heroesList = ['Superman'];
 
 // record a generic message and send it to Rollbar
 rollbar.log("Hello world!");
@@ -37,7 +37,23 @@ app.post("/api/hero", (req, res) => {
 
   if (index === -1 && hero !== "") {
     heroesList.push(hero);
+    rollbar.log('hero added successfully', {
+      myhero: `${hero}`,
+      type: 'manual'
+    })
+
+    res.status(200).send(heroesList)
+  } else if (hero === '') {
+    rollbar.error('no name given')
+
+    res.status(400).send({error: 'no name was provided'})
+  } else {
+    rollbar.error('hero already exists')
+
+    res.status(400).send({error: 'that hero already exists'})
   }
+
+
 });
 
 app.listen(port, () => {

@@ -1,23 +1,56 @@
 <html>
-  <head>
-    <style>
-      div {
-        margin:auto;
-        width: 50%;
-        outline: 1px solid grey;
-        text-align: center;
-        font-size: 24px;
+
+<head>
+  <style>
+    div {
+      margin: auto;
+      width: 50%;
+      outline: 1px solid grey;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    #heroes {
+      margin-top: 50px;
+      height: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    Hero List
+    <br>
+    Enter new Hero: <input id='input'></input>
+    <br>
+    <div id='heroes'></div>
+  </div>
+  <!-- import axios  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  <script>
+    let heroes = document.getElementById('heroes')
+    let input = document.getElementById('input')
+    let url = 'https://localhost:4000/'
+    document.getElementById('input').addEventListener('keyup', (e) => {
+      if (e.key === 'Enter') {
+        // console.log(input.value)
+        axios.post(`/api/hero`, { hero: input.value })
+          .then((res) => {
+            heroes.innerHTML = ''
+            for (let i in res.data) {
+              // console.log(res.data[i])
+              let hero = document.createElement('div')
+              hero.innerHTML = res.data[i]
+              // console.log(hero)
+              heroes.appendChild(hero)
+            }
+
+            // JSON.stringify(res.data)
+            console.log(res.data)
+          })
       }
-    </style>
-  </head>
-  <body>
-    <div>
-      Hello
-    </div>
-    <!-- import axios  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        console.log('test')
-    </script>
-  </body>
+    })
+  </script>
+</body>
+
 </html>
