@@ -3,8 +3,8 @@ const express = require("express");
 const path = require("path");
 //make class Rollbar from rollbar
 const Rollbar = require("rollbar");
-// const port = process.env.port || 4000;
-const port = process.env.port;
+const port = process.env.port || 4000;
+// const port = process.env.port;
 
 //instantiate an instance of Rollbar class below
 const rollbar = new Rollbar({
