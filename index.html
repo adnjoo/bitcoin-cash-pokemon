@@ -1,16 +1,51 @@
 <html>
   <head>
-
+    <!-- for responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.0.0-insiders.4a070ac/tailwind.min.css"
+    />
+    <!-- font awesome   -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
   </head>
+
   <body>
-    <label>
-      enter bitcoin cash (bch) transaction id:
-    </label>
-    <input type='text' id='txid' name='txid'>
-    <div>
-      <a href='https://whybitcoincash.com/'>
-        whybitcoincash
-      </a>
+    <div
+      class="border-2 border-indigo-600 mx-10 mt-2 mb-10 px-2 py-10 text-sm"
+      style="text-align: center; overflow: hidden"
+    >
+      <div class="text-2xl md:text-3xl">Bitcoin-Cash-Pokemon</div>
+      <div class="md:text-xl">Find the Pokemon for your BCH tx id</div>
+      <div class="mx-10" style="white-space: pre-line">
+        Instructions: enter a (bch) transaction id: e.g.
+        'e4924c95b56f1bb7e70bb181412bb6936c3d89377aa6d222e510a5d6514693ee'
+        Random tx-ids at
+        <a
+          style="color: blue"
+          href="https://blockchair.com/bitcoin-cash/transactions?"
+          >blockchair</a
+        >
+      </div>
+      <label>Input field:</label>
+      <input type="text" id="txid" name="txid" class="border" />
     </div>
+    <div class="border-4 mx-10 md:mx-40 my-10 px-2 py-2">
+      <img class="w-5/6 md:w-1/4 m-auto" id="pokeImg" />
+      <div style='overflow:hidden'
+        class="py-10 text-black-600 hover:text-blue-800 visited:text-purple-600"
+        id="description"
+      ></div>
+    </div>
+    <footer class='mt-20' style="text-align: center">
+      <a href="https://github.com/adnjoo">made by adnjoo</a>
+      <i class="fab fa-github"></i>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

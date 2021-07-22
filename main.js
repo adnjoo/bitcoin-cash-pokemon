@@ -1,4 +1,4 @@
-const hex = 'dc9104c4935c255d81b8e865c5a224cc2ad41eb1a3a66cc49fae0b52ff162fbf'
+const hex = '1111111111111111111111111111111111111111111111111111111111111111'
 const hex2 = '01ab03825462443abd217b73ea0b1e157eb7cb16015d55d2dad48722adca5699'
 const hex3 = 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'
 
@@ -6,6 +6,7 @@ console.log(hex.length)
 // const hex3 = parseInt(hex,16)
 // console.log(hex3.toLocaleString('fullwide', {useGrouping:false}))
 
+//hexadecimal to decimal
 function h2d(s) {
 
   function add(x, y) {
@@ -31,11 +32,11 @@ function h2d(s) {
   });
   return dec;
 }
+console.log('hex length',hex.length, hex3.length)
+console.log(h2d(hex))
+console.log(h2d(hex3))
 
+//898 pokemon
 console.log(h2d(hex)%898)
 console.log(h2d(hex2)%898)
 console.log(h2d(hex3)%898)
-
-
-
-//https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif
