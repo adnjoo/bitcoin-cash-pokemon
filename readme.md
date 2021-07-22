@@ -1,4 +1,4 @@
-# bitcoin pokemon
+# bitcoin cash pokemon
 
 > find the ?Pokemon for a bch tx id
 
