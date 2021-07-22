@@ -1,1 +1,1 @@
-implement testing
+implement testing - what kind of pokemon are generated - are all 898 pokemon generated?
