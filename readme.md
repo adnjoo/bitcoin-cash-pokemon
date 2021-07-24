@@ -2,7 +2,7 @@
 
 > find the ?Pokemon for a bch tx id
 
-[Demo](https://adnjoo.github.io/bitcoin-cash-pokemon/)
+Need to test a lot of tx ids.
 
 <a href='https://adnjoo.github.io/bitcoin-cash-pokemon/'>
 <img src='./scrn.png' width='250px'>
